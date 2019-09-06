@@ -1,0 +1,43 @@
+To work with images in python we need this library>> opencv-contrib-python
+
+pip install opencv-contrib-python
+
+import cv2
+
+cv2.imread("",1/0/-1) 
+-Here, 1 >> colored image (R,B,G)
+       0 >> grayscale image (Black & White)
+      -1 >> wil allow to use manipulate transparent option
+
+############################################################
+from facedetector.py -->
+
+# 'CascadeClassifier' will create a 'face_cascade' object of this class in python, and inside the class the argument will be the xml file path
+
+# 'detectMultiScale' will detect the upper left coordinate of the image and the width and height of the rectangle defining the image.
+
+
+        (x,y)     w
+          ^ ...................
+            .                 .
+            .                 .
+            .                 .
+          h .                 .
+            .                 .
+            .                 .
+            .                 .
+            ...................
+                               > (x+w,y+h)            
+
+# 'scaleFactor' will determine how precisely faces will be searched in a given image, the lower the value more precise the search, 1.05 will search for bigger face by decreasing the scale by 5% and continue it until a face is found. 1.05 is ideal here.
+# 'minNeighbors' will tell how many neigbors to search for, ideally it is 5.
+
+################################################################################
+from capture.py file -->
+
+#cv2.VideoCapture(0/1/..) >> number representes built-in video camera. the more camera, index number increases accordingly. the filepath of a video shall be passed if camera records are not meant to pass.
+
+# 'check' >> boolean
+# 'frame' >> numpy array that will read the very first frame of the video
+
+# video.release() >> stops the video
