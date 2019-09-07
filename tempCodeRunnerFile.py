@@ -1,0 +1,1 @@
+thresh_frame =  cv2.dilate(thresh_frame, None, iterations=2)
