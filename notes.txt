@@ -25,7 +25,7 @@ from capture.py file -->
 # 'frame' >> numpy array that will read the very first frame of the video
 
 # cv2.threshold(frame,30,255,cv2.THRESH_BINARY)[1] >> frame --> the frame/image i want to apply the threshold
-                          30  >> threshold value   (above this will create a rgb colored object)
+                          30  >> threshold value of detecting a moving object (above this will create a rgb colored object)
                           255 >> RGB value
                           cv2.THRESH_BINARY >> is a method
   For cv2.THRESH_BINARY we need to access the second item, that's why [1], for different methods we may need to use [0]
@@ -39,5 +39,6 @@ from capture.py file -->
 find countour works by finding the countour and storing them in a tuple, draw countour draws countour in an image
 
 (_,cnts,_) = cv2.findContours(thresh_frame.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) >> here 'findContours' clas is applied, thresh_frame.copy() --> here the copy of the file is selected so the original 'thresh_frame' won't face any issue.
-cv2.RETR_EXTERNAL --> to retrieve external countours, cv2.CHAIN_APPROX_SIMPLE --> an approximation method to retrieve countours. (here the tuple is quite peculiar) and the countrours will be stored in 'cnts'
+cv2.RETR_EXTERNAL --> to retrieve external countours, cv2.CHAIN_APPROX_SIMPLE --> an approximation method to retrieve countours. (here the tuple is quite peculiar) and the number of white objects/countrours will be stored in 'cnts'
+
 # video.release() >> stops the video

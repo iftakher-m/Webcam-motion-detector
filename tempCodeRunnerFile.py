@@ -1,1 +1,2 @@
-thresh_frame =  cv2.dilate(thresh_frame, None, iterations=2)
+contour) < 10000:
+        #     continue
