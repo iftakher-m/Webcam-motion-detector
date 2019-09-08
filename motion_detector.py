@@ -34,6 +34,8 @@ while True:
 
     status_list.append(status)    
 
+    status_list=status_list[-2:]
+
     if status_list[-1]==1 and status_list[-2]==0: # check the last two item, if it is (0,1) then note the time. 
             times.append(datetime.now())
     if status_list[-1]==0 and status_list[-2]==1:
